@@ -1,12 +1,12 @@
 import React from "react";
-import "./Home.css"; // CSS dosyasını import ediyoruz
-import { useHistory } from "react-router-dom"; // Sayfalar arası geçiş için useHistory
-import Footer from './Components/Footer'; // <<< Yeni Footer bileşenini import ediyoruz
+
+import { useHistory } from "react-router-dom";
+import Footer from './Components/Footer';
 
 export default function Home() {
-    const history = useHistory(); // useHistory hook'unu kullanıma alıyoruz
+    const history = useHistory();
 
-    // "Acıktım" butonuna tıklandığında /order sayfasına yönlendirme yapacak fonksiyon
+
     const handleOrderClick = () => {
         history.push("/order");
     };
