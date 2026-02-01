@@ -2,7 +2,7 @@ import React from "react";
 
 import { useHistory } from "react-router-dom";
 import Footer from './Components/Footer';
-import './home.css';
+import './Home.css';
 
 export default function Home() {
     const history = useHistory();
