@@ -1,0 +1,78 @@
+/* src/components/Footer.css */
+
+.site-footer {
+    background-color: #222; /* Koyu gri arka plan */
+    color: #ddd; /* Açık gri metin */
+    padding: 40px 20px 20px;
+    margin-top: 50px; /* Home.jsx'teki div'in altında boşluk bırakmak için */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Küçük ekranlarda alt alta */
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
+
+.footer-column .footer-logo {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-column p, .footer-column li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.instagram-feed .instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütunlu ızgara */
+    gap: 10px;
+}
+
+.instagram-feed .instagram-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #bbb;
+}

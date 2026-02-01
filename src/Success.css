@@ -1,0 +1,71 @@
+/* Başarı Sayfası Genel Ayarları */
+.success-page-container {
+  display: flex;
+  flex-direction: column; /* Öğeleri dikey olarak sırala */
+  align-items: center; /* Yatayda ortala */
+  justify-content: center; /* Dikeyde ortala (sayfa yüksekliği yeterliyse) */
+  min-height: 100vh; /* Sayfanın tamamını kaplamasını sağla */
+  background-color: #CE2829; /* Arka plan rengi */
+  color: white; /* Tüm yazı renklerini beyaz yap */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  padding: 20px; /* Kenarlardan biraz boşluk bırak */
+  box-sizing: border-box; /* Padding'in genişliği etkilememesini sağla */
+  text-align: center; /* İçindeki tüm metinleri ortala */
+}
+
+/* Logo Stili */
+.success-logo {
+  width: 150px; /* Logonun genişliğini ayarla */
+  height: auto; /* Orantılı olarak yüksekliğini ayarla */
+  margin-bottom: 30px; /* Logo ile metin arasında boşluk */
+}
+
+/* İçerik Sarma Alanı (Tüm metinleri ortalamak için) */
+.success-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Metinleri ve kutuyu ortala */
+  width: 100%; /* Genişliği ayarla */
+  max-width: 600px; /* Maksimum genişlik vererek çok yayılmasını engelle */
+}
+
+/* Başlık Stili */
+.success-content-wrapper h1 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+/* Sipariş Özeti Kutusu Stili */
+.order-summary-box {
+  background-color: white; /* Kutu arka planı beyaz */
+  color: #292929; /* Kutu içindeki yazı rengi koyu */
+  border-radius: 8px; /* Köşeleri yuvarlak */
+  padding: 30px 40px; /* İç boşluklar */
+  margin-top: 20px; /* Başlık ile kutu arasında boşluk */
+  width: 100%; /* Kutunun genişliğini ayarla */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+  text-align: left; /* Kutu içindeki metni sola hizala */
+}
+
+.order-summary-box h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #CE2829; /* Başlık rengi */
+  text-align: center; /* Kutu başlığını ortala */
+}
+
+.order-summary-box p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.order-summary-box p:last-child {
+  margin-bottom: 0;
+}
+
+.order-summary-box strong {
+    font-weight: 600; /* Değerleri daha belirgin yap */
+    color: #555;
+}

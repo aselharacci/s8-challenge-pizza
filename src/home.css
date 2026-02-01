@@ -1,0 +1,781 @@
+/* Genel Ayarlar ve Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Barlow', sans-serif;
+    /* Barlow fontunu uygula */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F8F8F8;
+    /* Genel arka plan rengi */
+    color: #333;
+    /* Genel metin rengi */
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Sayfanın tüm yüksekliğini kapla */
+}
+
+/* Hero Banner (En Üst Kırmızı Alan) */
+.hero-banner {
+    background-image: url('/images/iteration-1-images/home-banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #CE2829;
+    /* Mevcut kırmızı arka plan, resim yüklenmezse görünür */
+    color: white;
+    /* Beyaz metin */
+    display: flex;
+    flex-direction: column;
+    /* İçeriği dikey sırala */
+    align-items: center;
+    /* Yatayda ortala */
+    padding: 40px 20px;
+    position: relative;
+    /* Pizza görseli için */
+    overflow: hidden;
+    /* Taşmaları gizle */
+    min-height: 810px;
+    /* Görseldeki yüksekliği yakalamak için */
+    justify-content: flex-start;
+    /* İçeriği yukarı hizala */
+}
+
+.hero-banner .top-content {
+    text-align: center;
+    z-index: 2;
+    /* Metin ve butonun pizza üzerinde kalmasını sağla */
+    max-width: 800px;
+    width: 100%;
+    margin-top: 50px;
+    /* Logodan sonraki boşluk */
+}
+
+.hero-banner .header-logo {
+    width: 400px;
+    /* Logo boyutu */
+    margin-bottom: 15px;
+}
+
+.hero-banner h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+
+.hero-banner .slogan-top {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-family: 'Satisfy', cursive;
+    color: #FDC72A;
+    /* Sarı */
+}
+
+
+.hero-banner .slogan-main {
+    font-size: 3.5rem;
+    /* Daha büyük slogan */
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.hero-banner .order-button {
+    background-color: #FDC72A;
+    /* Sarı buton rengi */
+    color: black;
+    /* Kırmızı metin */
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    border-radius: 30px;
+    /* Yuvarlak kenarlar */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.hero-banner .order-button:hover {
+    background-color: #e0b020;
+}
+
+.hero-pizza {
+    position: absolute;
+    bottom: -10%;
+    /* Resimdeki gibi biraz aşağıdan başlasın */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 900px;
+    /* Resmin maksimum genişliği */
+    z-index: 1;
+    /* Metnin altında kalmasını sağla */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    /* Gölge efekti */
+}
+
+/* Kategori Navigasyonu */
+.category-nav {
+    display: flex;
+    justify-content: center;
+    /* Ortala */
+    flex-wrap: wrap;
+    /* Küçük ekranlarda alt alta */
+    gap: 25px;
+    /* Öğeler arası boşluk */
+    padding: 30px 20px;
+    background-color: #f0f0f0;
+    /* Hafif gri arka plan */
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    /* Alt çizgiyi kaldır */
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    /* Hafif yukarı kaydırma efekti */
+    color: #CE2829;
+}
+
+.category-item img {
+    width: 50px;
+    /* İkon boyutu */
+    height: 50px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    /* Yuvarlak ikon */
+    background-color: white;
+    /* İkon arka planı beyaz */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ortak Kart Stil Ayarları */
+.offer-card,
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    /* Genel kartlar için yuvarlaklık */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* İçerik taşmasını engelle */
+    display: flex;
+    /* İçerik düzenlemesi için flex kullan */
+    flex-direction: column;
+    /* Varsayılan olarak içeriği dikey sırala */
+    align-items: flex-start;
+    /* İçeriği sola hizala */
+}
+
+.offer-card img,
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Resmi kutuya sığdır */
+    display: block;
+    /* Görsel altındaki fazlalığı kaldırmak için */
+}
+
+.offer-card .card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* İçerik sola hizalı */
+    width: 100%;
+    /* İçeriğin genişliğini doldur */
+    box-sizing: border-box;
+    /* Padding'in genişliği etkilememesi için */
+}
+
+/* Özel Teklifler Alanı */
+.special-offers {
+    display: flex;
+    /* Flexbox kullanıyoruz */
+    gap: 30px;
+    /* Kartlar arası boşluk */
+    padding: 40px 20px;
+    max-width: 1200px;
+    /* İçeriğin maksimum genişliği */
+    margin: 0 auto;
+    /* Sayfayı ortala */
+    flex-wrap: wrap;
+    /* Küçük ekranlarda alt alta geçişi sağlar */
+    justify-content: center;
+    /* Öğeleri yatayda ortalar, boşlukları ayarlar */
+    align-items: flex-start;
+}
+
+/* BÜYÜK KART: Özel Lezzetus */
+.offer-card.large-card {
+    flex: 1;
+    height: 500px;
+    /* İstersen burayı calc ile medium'lara eşitleyebilirsin */
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Resmin dışarı taşmaması için */
+    color: white;
+}
+
+.offer-card.large-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Tam genişlik */
+    height: 100%;
+    /* Tam yükseklik */
+    object-fit: cover;
+    border-radius: inherit;
+    /* Kartın yuvarlak köşelerini uygula */
+    z-index: 1;
+    /* Resim arkada kalacak */
+}
+
+.offer-card.large-card .card-content {
+    position: absolute;
+
+    left: 0;
+    width: 100%;
+    height: 50%;
+    /* Görselin yarısını kaplasın */
+
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Metni ortala */
+    z-index: 2;
+}
+
+.offer-card.large-card h2 {
+    font-size: 3.2rem;
+    margin: 0 0 5px 0;
+    line-height: 1.1;
+    color: white;
+}
+
+.offer-card.large-card p {
+    font-size: 1.2rem;
+    /* Daha büyük metin */
+    color: #f0f0f0;
+    /* Biraz daha açık gri metin */
+    margin: 0 0 15px 0;
+    font-weight: 500;
+}
+
+.offer-card.large-card .card-button {
+    background-color: #FDC72A;
+    color: #CE2829;
+    /* Kırmızı metin */
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    margin-top: auto;
+    /* Butonu en alta iter */
+}
+
+.offer-card.large-card .card-button:hover {
+    background-color: #e0b020;
+}
+
+/* Sağdaki Teklifler (Hackathon Burger ve Kurye) Kapsayıcısı */
+.right-offers {
+    flex: 1;
+    /* Sol taraftaki kartın kalan kısmını kaplasın */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 300px;
+    /* Minimum genişlik */
+    max-width: 550px;
+    /* Maksimum genişlik */
+    /* Sağdaki iki kartın toplam yüksekliğini large-card ile eşitlemek için */
+    justify-content: space-between;
+    /* İki kart arasında boşluk bırakır */
+    /* align-self: stretch;  Parent'ın align-items: stretch özelliği bunu halletmeli */
+}
+
+/* Orta Boy Kart: Hackathon Burger */
+.offer-card.medium-card {
+    flex: 1;
+    /* Kalan dikey alanı kaplasın */
+    aspect-ratio: 2 /1;
+    position: relative;
+    /* İçeriği üzerine konumlandırmak için */
+    border-radius: 10px;
+    /* Kartın yuvarlaklığı */
+    overflow: hidden;
+    /* Resmin taşmasını engelle */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Gölge */
+
+}
+
+.offer-card.medium-card img {
+    position: absolute;
+    /* Kartın tamamını kaplaması için */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Resmi karta sığdır */
+    z-index: 1;
+    /* Resim altta kalsın */
+    border-radius: inherit;
+    /* Kartın yuvarlaklığını al */
+}
+
+.offer-card.medium-card .card-content {
+    position: relative;
+    /* Resmin üzerinde görünmesi için */
+    z-index: 2;
+    /* Resmin üstünde kalsın */
+    padding: 20px;
+    color: white;
+    /* Yazı rengi beyaz (resmin üzerinde okunması için) */
+    text-align: left;
+    /* Yazıları sola hizala */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* İçeriği sola hizala */
+}
+
+.offer-card.medium-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #FAF7F2;
+}
+
+.offer-card.medium-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+/* Küçük Kart: Kurye */
+.offer-card.small-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 550px;
+    height: 200px;
+}
+
+.offer-card.small-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    /* Arka planda */
+}
+
+.offer-card.small-card .card-content {
+    position: relative;
+    z-index: 2;
+    /* Resmin üzerinde */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.red-text {
+    color: red;
+
+}
+
+.offer-card.small-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #333;
+    /* Arka plan koyu ise white yapabilirsin */
+}
+
+.offer-card.small-card .card-button {
+    margin-top: 10px;
+}
+
+.card-button {
+    background-color: #FDC72A;
+    color: #CE2829;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.card-button:hover {
+    background-color: #e0b020;
+}
+
+.best-sellers {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    /* Gri kutu kaldırıldı */
+}
+
+/* Başlıklar */
+.section-title {
+    font-size: 1.8rem;
+    color: #CE2829;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-family: 'Satisfy', cursive;
+
+}
+
+.section-title-sub {
+    font-size: 2.2rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* İçerik container */
+.best-sellers {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: transparent;
+    /* Arka plan kaldırıldı */
+}
+
+/* Başlıklar */
+.section-title {
+    font-size: 1.8rem;
+    color: #CE2829;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.section-title-sub {
+    font-size: 2.2rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* İçerik container: yan yana dizme */
+.best-sellers-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+/* Her bir kategori öğesi buton gibi */
+.best-sellers-nav .category-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* ikon ve yazı arası boşluk */
+    padding: 12px 25px;
+    background-color: white;
+    /* buton rengi */
+    border-radius: 50px;
+    /* sol-sağ köşe yuvarlat */
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* İkon */
+.best-sellers-nav .category-item img {
+    width: 35px;
+    height: 35px;
+
+    padding: 5px;
+}
+
+/* Hover efekti */
+.best-sellers-nav .category-item:hover {
+    background-color: #292929;
+    color: white;
+}
+
+.product-list {
+    display: grid;
+    /* Otomatik olarak sığan sütunlar oluştur */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    /* Kartlar arası boşluk */
+    margin-top: 40px;
+    justify-items: center;
+    /* Grid içindeki öğeleri yatayda ortala */
+    align-items: stretch;
+    /* Öğelerin yüksekliğini eşit yap (varsayılan) */
+}
+
+.product-card {
+    /* Genel .offer-card ve .product-card stilinden miras alacak */
+    padding: 20px;
+    text-align: left;
+    /* Metni sola hizala */
+    /* Product card'ın kendi içinde de esnek davranmasını sağla */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    aspect-ratio: 1 / 1;
+    /* Kare şeklini korur */
+    max-width: 310px;
+    /* Aşırı genişlemeyi engelle */
+    width: 100%;
+    /* Grid hücresinin tamamını kapla */
+}
+
+.product-card img {
+    width: 200px;
+    height: 200px;
+    /* Sabit bir yükseklik veriyoruz */
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-left: 55px;
+}
+
+.product-card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+    max-height: 40px;
+    /* Başlıklar için sabit bir minimum yükseklik */
+    line-height: 1;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    /* solda–ortada–sağda */
+    align-items: center;
+    gap: 100px;
+    /* puan ile yorum arası boşluk */
+}
+
+.product-rating {
+    flex: 1;
+    text-align: left;
+}
+
+.product-reviews {
+    flex: 1;
+    text-align: center;
+}
+
+.product-price {
+    flex: 1;
+    text-align: right;
+    font-weight: bold;
+    /* kalın */
+    font-size: 1.2rem;
+}
+
+
+
+/* Responsive Düzenlemeler */
+@media (max-width: 992px) {
+    .special-offers {
+        flex-direction: column;
+        /* Büyük ekranlarda yan yana, küçükte alt alta */
+        align-items: center;
+        /* Ortaya hizala */
+    }
+
+    .offer-card.large-card,
+    .right-offers {
+        width: 100%;
+        /* Tam genişlik kaplasın */
+        max-width: 550px;
+        /* Ama yine de maksimum genişliği geçmesin */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 800px;
+        /* Küçük ekranlarda daha az yükseklik */
+    }
+
+    .hero-banner .slogan-main {
+        font-size: 2.5rem;
+    }
+
+    .hero-banner .order-button {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+
+    .hero-pizza {
+        max-width: 700px;
+        bottom: -5%;
+    }
+
+    .category-nav {
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+    .category-item img {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .category-item {
+        font-size: 0.9rem;
+    }
+
+    .special-offers,
+    .best-sellers {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+
+    .offer-card.large-card {
+        min-width: 100%;
+        /* Tam genişlik */
+    }
+
+    .offer-card.medium-card,
+    .offer-card.small-card {
+        flex-direction: column;
+        /* Küçük kartlar da alt alta gelsin (resim üstte, yazı altta) */
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .offer-card.medium-card img,
+    .offer-card.small-card img {
+        width: 60%;
+        /* Resim daha küçük alana yayılsın */
+        max-width: 150px;
+        /* Maksimum genişlik */
+        padding: 15px 0;
+        /* Boşlukları ayarla */
+    }
+
+    .offer-card.medium-card .card-content,
+    .offer-card.small-card .card-content {
+        padding: 15px;
+        position: relative;
+        z-index: 2;
+        color: #333;
+    }
+
+    .offer-card.medium-card h3,
+    .offer-card.small-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .offer-card.large-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .offer-card.large-card p {
+        font-size: 1rem;
+    }
+
+    .offer-card.large-card .card-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+        /* Tek sütunlu grid */
+    }
+
+    .product-card {
+        max-width: 100%;
+        /* Tam genişlik kapla */
+        min-height: 350px;
+        /* Minimum yükseklik ayarlaması */
+    }
+
+    .product-card img {
+        height: 150px;
+        /* Daha küçük resim */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner .slogan-main {
+        font-size: 2rem;
+    }
+
+    .hero-banner .header-logo {
+        width: 300px;
+    }
+
+    .hero-banner .order-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+
+    .hero-pizza {
+        max-width: 500px;
+    }
+
+    .category-nav {
+        gap: 10px;
+    }
+
+    .category-item {
+        font-size: 0.8rem;
+    }
+
+    .category-item img {
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+    }
+}
